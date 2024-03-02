@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     //Power Variables---------
+    [SerializeField] private float rotationSpeed = 1f;
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float dashForce = 3f;
     //Component Variables-----
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     float movementX;
     float movementZ;
+    
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -39,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
         movementZ = Input.GetAxisRaw("Vertical");
 
+
+
         //For Runing Animation
         if(movementX != 0 || movementZ != 0)
         {
@@ -50,14 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //For Flipping the character
-        if(movementX<0 && facingRight)
-        {
-            Flip();
-        }
-        else if(movementX>0 && !facingRight)
-        {
-            Flip();
-        }
+        transform.right = Vector3.Slerp(transform.right, new Vector3(movementX, 0, 0), Time.deltaTime * rotationSpeed);
 
         transform.Translate(new Vector3(movementX,0f,movementZ).normalized * Time.deltaTime * movementSpeed,Space.World);
     }
@@ -69,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
+            anim.SetTrigger("isDashing");
             lastDash = Time.time;
             rb.AddForce(new Vector3(movementX * dashForce, 0f, movementZ * dashForce),ForceMode.Impulse);
         }
@@ -76,7 +75,17 @@ public class PlayerMovement : MonoBehaviour
     private void Flip()
     {
         facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
+        Quaternion targetRoation = new Quaternion(0, 180, 0, 0);
+        if (facingRight)
+        {
+        transform.rotation = Quaternion.Lerp(transform.rotation,new Quaternion(0,180,0,0),20 * Time.deltaTime);
+
+        }
+        else
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(0,0, 0, 0), 20 * Time.deltaTime);
+        }
+        /*transform.Rotate(Vector3.Lerp(Vector3.zero,new Vector3(0,180,0),2));*/
         
     }
     public void Shrink()
