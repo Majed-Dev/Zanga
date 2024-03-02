@@ -47,5 +47,9 @@ public class Enemy : MonoBehaviour
             isAttacking = true;
 
         }
+        else
+        {
+            isAttacking = false;
+        }
     }
 }

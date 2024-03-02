@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject attackFX;
+    [SerializeField] Transform attackPoint;
     void Start()
     {
         
@@ -13,6 +14,9 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(attackFX, attackPoint,false);
+        }
     }
 }

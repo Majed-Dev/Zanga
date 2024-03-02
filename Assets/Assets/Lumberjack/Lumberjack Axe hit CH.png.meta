@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a8dd837288886449b0161c875c09212
+guid: 148b71b3ac7fc594a8a12629e445d99e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Lumberjack Axe hit CH_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 7
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db173690abf36aa4ebbee6220fc24a42
+      internalID: 1711091029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumberjack Axe hit CH_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 7
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba9b4034afa74a43ade7aa3e0599a2e
+      internalID: -729135748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumberjack Axe hit CH_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 7
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9744fb888d2fc942a8c969a83762151
+      internalID: -960791071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumberjack Axe hit CH_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 3
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce86e76bbdaf1434781e49ffa61cd239
+      internalID: 977243558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumberjack Axe hit CH_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 4
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccc554037f353341a9e30b0beb11844
+      internalID: -737904350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lumberjack Axe hit CH_0: 1711091029
+      Lumberjack Axe hit CH_1: -729135748
+      Lumberjack Axe hit CH_2: -960791071
+      Lumberjack Axe hit CH_3: 977243558
+      Lumberjack Axe hit CH_4: -737904350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
