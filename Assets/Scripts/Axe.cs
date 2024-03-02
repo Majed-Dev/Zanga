@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Enemy : MonoBehaviour
+public class Axe : MonoBehaviour
 {
     Transform targetTree;
     [SerializeField] private float movementSpeed = .1f;
@@ -11,7 +12,7 @@ public class Enemy : MonoBehaviour
     bool facingRight = true;
 
     //Boolean Phases
-    private bool isAttacking = false;
+    private bool inRange = false;
     void Start()
     {
         targetTree = GameObject.FindGameObjectWithTag("Tree").GetComponent<Transform>();
@@ -23,33 +24,41 @@ public class Enemy : MonoBehaviour
     {
         chaseTree();
         Attacking();
-        anim.SetBool("isAttacking", isAttacking);
+        anim.SetBool("inRange", inRange);
     }
     private void chaseTree()
     {
-        if(!isAttacking)
+        if(!inRange)
         transform.position= Vector3.MoveTowards(transform.position,targetTree.transform.position,movementSpeed * Time.deltaTime);
 
         if (transform.position.x > targetTree.transform.position.x && facingRight)
         {
-            transform.Rotate(0, 180, 0);
-            facingRight = !facingRight;
+            Flip();
         }
-        else
+        else if(transform.position.x < targetTree.transform.position.x && !facingRight)
         {
-            transform.Rotate(0, 0, 0);
+            Flip();
         }
     }
     private void Attacking()
     {
         if(Vector3.Distance(transform.position,targetTree.transform.position) <= attackRange)
         {
-            isAttacking = true;
+            inRange = true;
 
         }
         else
         {
-            isAttacking = false;
+            inRange = false;
         }
+    }
+    public void Hit()
+    {
+        print("Hit Tree");
+    }
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
     }
 }
