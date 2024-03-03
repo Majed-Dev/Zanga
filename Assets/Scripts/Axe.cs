@@ -54,7 +54,7 @@ public class Axe : MonoBehaviour
     }
     public void Hit()
     {
-        print("Hit Tree");
+        GameObject.FindGameObjectWithTag("Tree").GetComponent<tree>().health--;
     }
     private void Flip()
     {
