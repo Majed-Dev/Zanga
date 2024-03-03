@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Timeline;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -21,12 +20,15 @@ public class PlayerMovement : MonoBehaviour
 
     float movementX;
     float movementZ;
+
+    SoundManager sm;
     
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement();
         Dash();
+
     }
 
     private void Movement()
@@ -67,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
+            sm.PlaySFX(sm.dash);
             anim.SetTrigger("isDashing");
             lastDash = Time.time;
             rb.AddForce(new Vector3(movementX * dashForce, 0f, movementZ * dashForce),ForceMode.Impulse);

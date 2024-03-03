@@ -20,6 +20,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip Hit;
     public AudioClip damage;
     public AudioClip step;
+
+    [Header("Officer")]
+    public AudioClip fire;
     void Start()
     {
         musicSource.clip = soundtrack;

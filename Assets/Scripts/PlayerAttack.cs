@@ -6,12 +6,13 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject attackFX;
     [SerializeField] Transform attackPoint;
+    SoundManager sm;
 
     [SerializeField] private float attackSpeed = .3f;
     private float lastAttack;
     void Start()
     {
-        
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class PlayerAttack : MonoBehaviour
             }
             lastAttack = Time.time;
             Instantiate(attackFX, attackPoint, false);
+
         }
     }
 }

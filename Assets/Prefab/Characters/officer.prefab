@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.2672081, y: 1, z: 6.6396427}
-  m_Center: {x: -0.41734123, y: 0, z: 2.8198214}
+  m_Size: {x: 0.95952606, y: 2.8317018, z: 10.748984}
+  m_Center: {x: -0.3853054, y: 0.27059007, z: 4.874492}
 --- !u!114 &364058606804588866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1dc2d60a864ac4c90b0984b32f6703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  officer: {fileID: 202186085506910461}
+  sm: {fileID: 0}
 --- !u!1 &2500518270484413288
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
   movementSpeed: 3
-  range: 4
+  range: 5
   shootingPoint: {fileID: 5470733534706280138}
   shooting: 0
 --- !u!1 &5009375242198422850

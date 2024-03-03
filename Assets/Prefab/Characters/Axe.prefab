@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c320b20dedaa87246bc978296a41a63e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 4.5
   attackRange: 0.8
 --- !u!1 &1972652090566488237
 GameObject:

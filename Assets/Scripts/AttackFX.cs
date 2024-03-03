@@ -6,9 +6,11 @@ public class AttackFX : MonoBehaviour
 {
     [SerializeField] private float expandSpeed = .5f;
     SwitchLevel switchLevel;
+    SoundManager sm;
     void Awake()
     {
         switchLevel = GameObject.Find("LevelSystem").GetComponent<SwitchLevel>();
+        sm = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
     void Update()
     {
@@ -20,9 +22,11 @@ public class AttackFX : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
     private void OnTriggerEnter(Collider other)
     {
+        sm.PlaySFX(sm.attack);
         if (other.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
