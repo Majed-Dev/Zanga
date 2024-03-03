@@ -24,14 +24,7 @@ public class AttackFX : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            print("Hit");
+            Destroy(other.gameObject);
         }
-    }
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            print("Hit");
-        }        
     }
 }
