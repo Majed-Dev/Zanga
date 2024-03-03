@@ -13,6 +13,7 @@ public class officer : MonoBehaviour
     private Animator anim;
     [SerializeField] Transform shootingPoint;
     public bool shooting = false;
+
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
